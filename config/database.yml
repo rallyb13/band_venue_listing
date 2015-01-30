@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: live_music_development
+
+test:
+  adapter: postgresql
+  database: live_music_test
