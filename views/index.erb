@@ -15,6 +15,10 @@
 <% @bands.each() do |band| %>
 <ul>
   <li><%= band.name() %> <a class="label label-as-badge label-info" href="/band/<%= band.id %>">
-    <%= band.venues.length() %> venues</a></li>
+    <%= band.venues.length() %> venues</a> </li>
 </ul>
 <% end %>
+
+<br>
+<img src="God_Gave_Rock.jpg" alt="God Gave Rock and Roll To You."/>
+<p class="caption">Image courtesy of "algreen" on deviantART</p>

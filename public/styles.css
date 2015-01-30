@@ -2,6 +2,10 @@ h2, h3 {
   text-align: center;
 }
 
+.caption{
+  font-size: x-small;
+}
+
 .leftie{
   float: left;
   column-width: 60%;
