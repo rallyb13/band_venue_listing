@@ -1,3 +1,16 @@
 h2, h3 {
   text-align: center;
 }
+
+.leftie{
+  width: 60%;
+}
+
+.rightie{
+  float: right;
+  width: 40%;
+}
+
+#home{
+  float: right;
+}

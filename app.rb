@@ -35,3 +35,17 @@ post('/add_venues') do
   end
   redirect back
 end
+
+patch('/band_update') do
+  id = params.fetch("band_id")
+  new_name = params.fetch("new_name")
+  @band = Band.find(id)
+  @band.update({:name => new_name})
+  redirect back
+end
+
+delete('/band_kill') do
+  @band = Band.find(params.fetch("band_id"))
+  @band.destroy()
+  redirect('/')
+end

@@ -14,6 +14,7 @@
 
 <% @bands.each() do |band| %>
 <ul>
-  <li><a href="/band/<%= band.id %>"><%= band.name() %></a></li>
+  <li><%= band.name() %> <a class="label label-as-badge label-info" href="/band/<%= band.id %>">
+    <%= band.venues.length() %> venues</a></li>
 </ul>
 <% end %>
