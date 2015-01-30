@@ -6,6 +6,12 @@ class Venue < ActiveRecord::Base
 
   private
     define_method(:cap_venue) do
-      self.place=(self.place().capitalize())
+      if self.place.include?(" ")
+        word_by_word = self.place.split
+        first_word = word_by_word.shift.capitalize!
+        self.place=(word_by_word.unshift(first_word).join(" "))
+      else
+        self.place=(self.place().capitalize())
+      end
     end
 end

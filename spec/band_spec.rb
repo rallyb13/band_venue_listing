@@ -7,5 +7,9 @@ describe(Band) do
     test_band = Band.create({:name => "mucus forming chemical bath"})
     expect(test_band.name()).to(eq("Mucus forming chemical bath"))
   end
+  it('ensures that the band name comes in capitalized, but only the first word is changed') do
+    test_band = Band.create({:name => "hidden Input"})
+    expect(test_band.name()).to(eq("Hidden Input"))
+  end
 
 end

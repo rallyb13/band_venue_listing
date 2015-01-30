@@ -6,6 +6,12 @@ class Band < ActiveRecord::Base
 
   private
     define_method(:cap_band) do
-      self.name=(self.name().capitalize())
+      if self.name.include?(" ")
+        word_by_word = self.name.split
+        first_word = word_by_word.shift.capitalize!
+        self.name=(word_by_word.unshift(first_word).join(" "))
+      else
+        self.name=(self.name().capitalize())
+      end
     end
 end

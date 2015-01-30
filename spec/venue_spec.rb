@@ -8,8 +8,8 @@ describe(Venue) do
     test_venue = Venue.create({:place => "more cowbell"})
     expect(test_venue.place()).to(eq("More cowbell"))
   end
-  # it('will ensure that only the first word gets changed') do
-  #   test_venue = Venue.create({:place => "your last Standard"})
-  #   expect(test_venue.place()).to(eq("Your last Standard"))
-  # end
+  it('will ensure that only the first word gets capitalized') do
+    test_venue = Venue.create({:place => "your last Standard"})
+    expect(test_venue.place()).to(eq("Your last Standard"))
+  end
 end
