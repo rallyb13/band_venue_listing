@@ -1,0 +1,19 @@
+<h2>Band Together!</h2>
+
+<p>Keep a record of your favorite bands...</p>
+
+<form action="/bands" method="post">
+  <label for="name">Band name</label>
+  <input type="text" name="name">
+  <button type="submit" class="btn btn-md btn-success">Who's Next?</button>
+</form>
+
+<hr>
+
+<h4>Don't You--Forget About Me!</h4>
+
+<% @bands.each() do |band| %>
+<ul>
+  <li><a href="/band/<%= band.id %>"><%= band.name() %></a></li>
+</ul>
+<% end %>

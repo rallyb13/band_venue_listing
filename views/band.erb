@@ -1,0 +1,29 @@
+<h2>We're Comin' To Your Town!</h2>
+<h3>We'll Help You Party It Down!</h3>
+
+<p>But we can't do it alone. If you wants to get funked up, add venues!<p>
+<form action="/venues" method="post">
+  <label for="place">Venue:</label>
+  <input type="text" name="place">
+  <button type="submit" class="btn btn-md btn-warning">ROCK ON!</button>
+</form>
+
+<hr>
+<p>Please select where <%= @band.name() %> plays!</p>
+<form action="/add_venues" method="post">
+  <input type="hidden" name="band_id" value="<%= @band.id %>">
+  <% @venues.each() do |venue| %>
+    <br><input type="checkbox" name="venue_ids[]" value="<%= venue.id %>">
+    <%= venue.place %>
+  <% end %>
+  <br><br><button type="submit" class="btn btn-lg btn-danger">Armageddon It!</button>
+</form>
+
+<hr>
+<h3>Catch <strong><%= @band.name() %></strong> here:</h3>
+<% @band.venues().each() do |ven| %>
+  <p><%= ven.place %></p>
+<% end %>
+
+<br>
+<a href="/" class="btn btn-sm btn-primary">Take Me Home</a>
